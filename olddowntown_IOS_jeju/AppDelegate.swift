@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Tamra
+import RealmSwift
+import Realm
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let config = TamraConfig(
+            appKey: "98cf5477396a43028bfdbdf4b5100a1e",
+            profile: .production,
+            simulation: false,
+            logLevel: .debug)
+        
+        Tamra.configure(config)
+        
+        sleep(3)
+        
         return true
     }
 
